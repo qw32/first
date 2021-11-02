@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsk.supermarket.mapper.TotalMapper">
+
+    <resultMap id="Commdies" type="com.xsk.supermarket.dto.Commdies_Ans">
+        <result property="T_Commid" column="T_commid"></result>
+        <result property="Gname" column="Gname"></result>
+        <result property="price" column="price"></result>
+        <result property="cost" column="cost"></result>
+        <result property="count" column="count"></result>
+        <result property="sell" column="sell"></result>
+    </resultMap>
+
+<!--    <resultMap id="Commdid" type="com.xsk.supermarket.dto.Commid">-->
+<!--        <result property="T_Commid" column="T_commid"></result>-->
+<!--    </resultMap>-->
+
+    <select id="getall" resultMap="Commdies">
+        select T_price.T_commid,T_price.Gname,T_price.price,T_price.cost,t_commodity.count,t_commodity.sell from
+        `t_commodity` inner JOIN `t_price` on `t_commodity`.T_commid = `t_price`.T_commid
+    </select>
+
+    <delete id="DeleteByID">
+        delete from T_price WHERE  T_commid = #{T_Commid}
+    </delete>
+    <delete id="DeleteByID2">
+        delete from T_commodity where T_commid = #{T_Commid}
+    </delete>
+
+
+
+    <insert id="setone" parameterType="com.xsk.supermarket.dto.SetCommidity" useGeneratedKeys="true" keyProperty="tCommid">
+        insert into supermarket.t_commodity(count,Gname,sell) values(#{count},#{Gname},#{sell})
+    </insert>
+
+    <insert id="setone1">
+        insert into supermarket.t_price(T_Commid,Gname,price,cost) values(#{T_Commid},#{Gname},#{price},#{cost})
+    </insert>
+
+</mapper>
