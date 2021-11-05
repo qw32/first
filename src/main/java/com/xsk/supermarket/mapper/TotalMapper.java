@@ -9,6 +9,7 @@ import com.xsk.supermarket.vo.SoldProduct;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public interface TotalMapper {
 
     List<Commdies_Ans> getall();

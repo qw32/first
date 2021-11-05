@@ -14,6 +14,7 @@ import java.util.List;
  * @author xsk
  * @since 2021-10-30
  */
+@SuppressWarnings("ALL")
 public interface ITCommodityService extends IService<TCommodity> {
 
     List<TCommodity> queryCommdity(Commdies_Ans commdies_ans);

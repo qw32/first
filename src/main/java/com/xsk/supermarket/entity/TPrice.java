@@ -14,6 +14,7 @@ import lombok.EqualsAndHashCode;
  * @author xsk
  * @since 2021-10-30
  */
+@SuppressWarnings("ALL")
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class TPrice implements Serializable {

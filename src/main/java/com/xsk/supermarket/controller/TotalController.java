@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 @RestController
 @RequestMapping("/total")
 @Api(tags = "商品总查询")

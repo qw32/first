@@ -24,6 +24,7 @@ import java.util.Properties;
  * @author xsk
  * @since 2021-10-30
  */
+@SuppressWarnings("ALL")
 @RestController
 @RequestMapping("/supermarket/tcommodity")
 public class TCommodityController {

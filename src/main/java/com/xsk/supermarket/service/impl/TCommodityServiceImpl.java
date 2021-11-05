@@ -19,6 +19,7 @@ import java.util.List;
  * @author xsk
  * @since 2021-10-30
  */
+@SuppressWarnings("ALL")
 @Service
 public class TCommodityServiceImpl extends ServiceImpl<TCommodityMapper, TCommodity> implements ITCommodityService {
 

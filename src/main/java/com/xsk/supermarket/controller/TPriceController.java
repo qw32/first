@@ -8,8 +8,6 @@ import com.xsk.supermarket.service.impl.TPriceServiceImpl;
 import com.xsk.supermarket.service.impl.TUserServiceImpl;
 import com.xsk.supermarket.vo.Commdities;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +21,7 @@ import java.util.List;
  * @author xsk
  * @since 2021-10-30
  */
+@SuppressWarnings("ALL")
 @RestController
 @RequestMapping("/supermarket/tprice")
 @Slf4j
@@ -48,16 +47,17 @@ public class TPriceController {
         Commdies_Ans commdies_ans = new Commdies_Ans();
         commdies_ans.setGname(commdities.getGname());
         commdies_ans.setT_Commid(commdities.getT_Commid());
-        System.out.println(commdies_ans.getGname()+"     "+commdies_ans.getT_Commid());
+//        System.out.println(commdies_ans.getGname()+"     "+commdies_ans.getT_Commid());
 //        List<TCommodity> ans = tCommodityService.list(commdies_ans);
+
         List<TPrice> ans1 = tPriceService.QueryPrice(commdies_ans);
         return ans1;
     }
 
-    @RequestMapping("/test")
-    public String  QueryALL(){
-        return "ok";
-    }
+//    @RequestMapping("/test")
+//    public String  QueryALL(){
+//        return "ok";
+//    }
 
 //    @RequestMapping("/QuerySell")
 //    public int QuerySell(){
